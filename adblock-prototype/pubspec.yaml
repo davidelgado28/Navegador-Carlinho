@@ -1,0 +1,4 @@
+dependencies:
+  flutter:
+    sdk: flutter
+  ffi: ^2.1.0 
