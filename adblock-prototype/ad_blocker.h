@@ -2,21 +2,26 @@
 #define AD_BLOCKER_H
 
 #include <string>
-#include <unordered_set>
 #include <vector>
+
+struct FilterRule {
+    std::string pattern;
+    bool is_wildcard;
+};
 
 class AdBlocker {
 public:
     AdBlocker();
     ~AdBlocker() = default;
 
-    void AddRule(const std::string& domain);
+    void AddRule(const std::string& pattern);
     void LoadDefaultFilters();
     bool ShouldBlock(const std::string& url) const;
 
 private:
-    std::unordered_set<std::string> blocked_domains_;
-    std::string ExtractDomain(const std::string& url) const;
+    std::vector<FilterRule> rules_;
+
+    bool MatchWildcard(const std::string& pattern, const std::string& text) const;
 };
 
 #endif 
