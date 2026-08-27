@@ -181,7 +181,7 @@ class _PrivacyDashboardScreenState extends State<PrivacyDashboardScreen> {
             
             const SizedBox(height: 16),
             const Text(
-              '💡 Dica: Teste URLs como "https://ads.g.doubleclick.net" ou "https://github.com"',
+              'Dica: Teste URLs como "https://ads.g.doubleclick.net" ou "https://github.com"',
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.grey, fontSize: 13),
             ),
